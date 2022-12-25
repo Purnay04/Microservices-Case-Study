@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"B1212\",\r\n    \"name\": \"History of Amazon Valley\",\r\n    \"author\": \"Ross Suarez\",\r\n    \"available_copies\": 2,\r\n    \"total_copies\": 2\r\n}",
+							"raw": "{\r\n    \"id\": \"B1213\",\r\n    \"name\": \"Design Patterns\",\r\n    \"author\": \"Purnay Barge\",\r\n    \"available_copies\": 10,\r\n    \"total_copies\": 10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,12 +44,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/books",
+							"raw": "http://localhost:8989/books",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8989",
 							"path": [
 								"books"
 							]
@@ -64,12 +64,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/books?bookId=B1212",
+							"raw": "http://localhost:8989/books?bookId=B1212",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8989",
 							"path": [
 								"books"
 							],
@@ -86,8 +86,28 @@
 				{
 					"name": "Update a book",
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"B1212\",\r\n    \"name\": \"History of Amazon Valley\",\r\n    \"author\": \"Ross Suarez\",\r\n    \"available_copies\": 3,\r\n    \"total_copies\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8989/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"books"
+							]
+						}
 					},
 					"response": []
 				}
@@ -102,12 +122,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/subscriptions",
+							"raw": "http://localhost:8989/subscriptions",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8989",
 							"path": [
 								"subscriptions"
 							]
@@ -121,19 +141,19 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/subscriptions?subscriberName=John",
+							"raw": "http://localhost:8989/subscriptions?subscriberName=Ritz",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8989",
 							"path": [
 								"subscriptions"
 							],
 							"query": [
 								{
 									"key": "subscriberName",
-									"value": "John"
+									"value": "Ritz"
 								}
 							]
 						}
@@ -147,7 +167,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"subscriberName\": \"Amey\",\r\n    \"book_id\": \"B1212\",\r\n    \"date_subscribed\": \"15/05/2022\"\r\n}",
+							"raw": "{\r\n    \"subscriberName\": \"Ritz\",\r\n    \"book_id\": \"B1213\",\r\n    \"date_subscribed\": \"18/05/2022\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
