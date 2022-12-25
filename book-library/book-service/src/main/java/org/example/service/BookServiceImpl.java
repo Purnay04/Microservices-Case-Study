@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import javax.persistence.EntityExistsException;
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,5 +31,12 @@ public class BookServiceImpl implements BookService{
         }
         bookRepo.save(book);
         return book;
+    }
+
+    public Book updateBook(Book bookWithChanges) throws EntityNotFoundException{
+        if(bookRepo.findById(bookWithChanges.getId()).isEmpty())
+            throw new EntityNotFoundException("Given book id is not present");
+        bookRepo.save(bookWithChanges);
+        return bookWithChanges;
     }
 }

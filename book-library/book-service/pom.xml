@@ -17,4 +17,5 @@
 
     <artifactId>book-service</artifactId>
     <packaging>jar</packaging>
+
 </project>

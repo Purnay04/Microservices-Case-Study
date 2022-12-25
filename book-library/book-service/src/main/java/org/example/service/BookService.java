@@ -7,4 +7,5 @@ public interface BookService {
     List<Book> getAllBooks();
     Optional<Book> findById(String id);
     Book addBook(Book book);
+    Book updateBook(Book bookWithChanges);
 }

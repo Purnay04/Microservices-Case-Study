@@ -47,4 +47,16 @@ public class BookController {
             return new ResponseEntity<>(Map.of(STATUS_MSG, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @PutMapping
+    public ResponseEntity<Map<String, Object>> updateBook(@RequestBody Book bookWithChanges){
+        try{
+            if(ObjectUtils.isEmpty(bookWithChanges))
+                return new ResponseEntity<>(Map.of(STATUS_MSG,"Given pay-load object is empty!"), HttpStatus.BAD_REQUEST);
+            bookService.updateBook(bookWithChanges);
+            return new ResponseEntity<>(Map.of(STATUS_MSG, "Book Updated Successfully",RESPONSE_OBJ, bookWithChanges), HttpStatus.OK);
+        }catch(Exception e){
+            return new ResponseEntity<>(Map.of(STATUS_MSG, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
