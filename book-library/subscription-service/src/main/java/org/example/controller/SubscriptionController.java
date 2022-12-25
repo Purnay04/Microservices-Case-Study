@@ -7,6 +7,8 @@ import org.example.model.Subscription;
 import org.example.service.SubscriptionImpl;
 import org.apache.commons.lang3.StringUtils;
 import org.example.util.BookFeignService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -28,6 +30,7 @@ public class SubscriptionController {
     final SubscriptionImpl subscriptionService;
     final RestTemplate restTemplate;
     final BookFeignService bookFeignService;
+    final Logger logger = LoggerFactory.getLogger(SubscriptionController.class);
 
     @GetMapping
     public ResponseEntity<List<Subscription>> getSubscriptions(@RequestParam(value = "subscriberName", required = false) String subscriberName){
@@ -41,6 +44,7 @@ public class SubscriptionController {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             return new ResponseEntity<>(subscriptions, HttpStatus.OK);
         }catch (Exception e){
+            logger.error(e.getMessage());
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
