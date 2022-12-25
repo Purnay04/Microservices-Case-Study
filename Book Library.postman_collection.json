@@ -24,12 +24,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/books",
+							"raw": "http://localhost:8989/books",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8081",
+							"port": "8989",
 							"path": [
 								"books"
 							]
@@ -147,7 +147,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"subscriberName\": \"John\",\r\n    \"book_id\": \"B1212\",\r\n    \"date_subscribed\": \"14/05/2022\"\r\n}",
+							"raw": "{\r\n    \"subscriberName\": \"Amey\",\r\n    \"book_id\": \"B1212\",\r\n    \"date_subscribed\": \"15/05/2022\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -155,12 +155,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/subscriptions",
+							"raw": "http://localhost:8989/subscriptions",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "8989",
 							"path": [
 								"subscriptions"
 							]
