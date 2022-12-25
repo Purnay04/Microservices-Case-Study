@@ -26,6 +26,7 @@ public class SubscriptionController {
     final String STATUS_MSG = "Status Msg";
     final String RESPONSE_OBJ = "Response Object";
     final SubscriptionImpl subscriptionService;
+    final RestTemplate restTemplate;
     final BookFeignService bookFeignService;
 
     @GetMapping
@@ -48,8 +49,7 @@ public class SubscriptionController {
     public ResponseEntity<Map<String, Object>> subscribeBook(@RequestBody Subscription newSubscription) throws CloneNotSupportedException {
         if(ObjectUtils.isEmpty(newSubscription))
             return new ResponseEntity<>(Map.of(STATUS_MSG, "Given Pay-load Object is Empty!"), HttpStatus.BAD_REQUEST);
-        RestTemplate restTemplate = new RestTemplate();
-        String getBookURI = "http://localhost:8081/books?bookId=";
+        String getBookURI = "http://BOOK-SERVICE/books?bookId=";
         ResponseEntity<List<BookView>> responseView = restTemplate.exchange(
                 getBookURI + newSubscription.getBook_id(),
                 HttpMethod.GET,

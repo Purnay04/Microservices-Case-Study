@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Map;
 
-@FeignClient(value="bookService", url="http://localhost:8081/books")
+@FeignClient("book-service")
 public interface BookFeignService {
-    @RequestMapping(method = RequestMethod.PUT, value = "/")
+    @RequestMapping(method = RequestMethod.PUT, value = "/books")
     ResponseEntity<Map<String, Object>> updateBook(@RequestBody BookView bookWithChanges);
 }
